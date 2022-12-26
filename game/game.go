@@ -4,6 +4,8 @@ type Player interface {
 
 	// move As many speeds as they have
 	Move()
+	// return the player situation
+	Position() int
 }
 type Game struct {
 	// area of match
@@ -35,5 +37,22 @@ func (g *Game) MovePlayers() {
 	for _, Player := range g.players {
 		player.Move()
 	}
+
+}
+
+func (g *Game) CheckWinner() Player {
+	// this returned player is winner of game
+	for _, Player := range g.players {
+		if player.Position > g.field_length 
+		
+
+		return Player
+	}
+	}
+	// if no one was not > len return nil
+	return nil
+
+
+func (g *Game) print() {
 
 }

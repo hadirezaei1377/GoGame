@@ -19,14 +19,15 @@ func main() {
 
 	// loop til there is a winner
 	// winner is a variable and empty at first
-	var winner Player
+	var winner gamepkg.Player
 	for winner == nil {
 		/* in loop
 		// move the players
 		// check is there any winner?
 		// print the final statement and print the winner
 		*/
-		game.Move
+		game.MovePlayers()
+		winner := game.CheckWinner()
 	}
 
 }
