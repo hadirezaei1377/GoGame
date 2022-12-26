@@ -1,15 +1,32 @@
 package main
 
+import gamepkg "GoGame/game"
+
 func main() {
 
 	// make players
+	// call from game package
+	dog := gamepkg.NewDog("Axlie")
+	cat := gamepkg.NewCat("Binky")
+	owl := gamepkg.NewOwl("Hanna")
 	// make the game(an object named game which has a series of game)
-	// join players to the game
+	game := gamepkg.NewGame(50)
+	// change package name to gamepkg
+	// join(add) players to the game
+	game.Join(Dog)
+	game.Join(Cat)
+	game.Join(Owl)
+
 	// loop til there is a winner
-	/* in loop
-	// move the players
-	// check is there any winner?
-	// print the final statement and print the winner
-	*/
+	// winner is a variable and empty at first
+	var winner Player
+	for winner == nil {
+		/* in loop
+		// move the players
+		// check is there any winner?
+		// print the final statement and print the winner
+		*/
+		game.Move
+	}
 
 }
