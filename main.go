@@ -1,6 +1,9 @@
 package main
 
-import gamepkg "GoGame/game"
+import (
+	gamepkg "GoGame/game"
+	"fmt"
+)
 
 func main() {
 
@@ -28,6 +31,8 @@ func main() {
 		*/
 		game.MovePlayers()
 		winner := game.CheckWinner()
-	}
 
+		game.Print()
+	}
+	fmt.Printf("%s won the game!!!", winner.Name())
 }

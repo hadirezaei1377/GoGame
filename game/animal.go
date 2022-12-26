@@ -10,8 +10,20 @@ type Dog struct {
 
 
 func NewDog(name string) *Dog {
-	return &Dog[Name: name, Speed: 2 , x:0]
+	return &Dog[name, Speed: 2 , x:0]
 }
+
+func(c *Dog) Position() int {
+	return c.x
+	}
+	
+	func(c *Dog) Name() string {
+		return c.name 
+	}
+	
+	func(c *Dog) Move() string {
+		c.x += c.speed 
+	}
 
 // Cat
 type Cat struct {
@@ -21,8 +33,20 @@ type Cat struct {
 }
 
 func NewCat(name string) *Cat {
-	return &Cat[Name: name, Speed: 1 , x:0]
+	return &Cat[name, Speed: 1 , x:0]
 }
+
+func(c *Cat) Position() int {
+return c.x
+}
+
+func(c *Cat) Name() string {
+	return c.name 
+}
+
+func(c *Cat) Move() string {
+	c.x += c.speed 
+} 
 
 // Owl
 type Owl struct {
@@ -32,5 +56,17 @@ type Owl struct {
 }
 
 func NewOwl(name string) *Owl {
-	return &Owl[Name: name, Speed: 3 , x:0]
+	return &Owl[name, Speed: 3 , x:0]
 }
+
+func(c *Owl) Position() int {
+	return c.x
+	}
+	
+	func(c *Owl) Name() string {
+		return c.name 
+	}
+	
+	func(c *Owl) Move() string {
+		c.x += c.speed 
+	}
