@@ -1,11 +1,20 @@
 package game
 
+import (
+	"fmt"
+	"os"
+	"os/exec"
+	"strings"
+	"time"
+)
+
 type Player interface {
 
 	// move As many speeds as they have
 	Move()
 	// return the player situation
 	Position() int
+	Name() string
 }
 type Game struct {
 	// area of match
@@ -53,6 +62,25 @@ func (g *Game) CheckWinner() Player {
 	return nil
 
 
-func (g *Game) print() {
+	// game environement with Ready codes
+func (g *Game) Print() {
+	time.Sleep(time.Millisecond * 250)
+	clearTerminal()
+	fmt.Println("|" + strings.Repeat("-", g.field_length+6) + "|")
+	for _, player := range g.Players {
+		pos := player.Position()
+		name := player.Name()
+		row := "|" + strings.Repeat(" ", pos) + name + strings.Repeat(" ", g.field_length-pos+1) + "|"
+		fmt.Println("|" + strings.Repeat("_", g.field_length+6) + "|")
 
+	}
+
+
+}
+
+func clearTerminal() {
+	
+	cmd := exec.Command("cmd", "/", "cls")
+	cmd.Stdout = os.Stdout
+	cmd.Run()
 }
